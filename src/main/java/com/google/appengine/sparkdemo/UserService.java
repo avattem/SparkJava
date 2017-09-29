@@ -35,12 +35,7 @@ public class UserService {
    * @param datastore service object to execute requests
    * @param kind the kind for the Datastore entities in this demo
    */
-  public UserService(Datastore datastore, String kind) {
-   
-    this.keyFactory = datastore.newKeyFactory().setKind(kind);
-    this.kind = kind;
-  }
-
+ 
   /**
    * Return a list of all users.
    */
@@ -50,7 +45,7 @@ public class UserService {
     QueryResults<Entity> results = datastore.run(query);
     List<User> users = new ArrayList<>();
     while (results.hasNext()) {
-      Entity result = results.next();
+    
       users.add(
           new User(result.getString("id"), result.getString("name"), result.getString("email")));
     }
