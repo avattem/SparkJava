@@ -26,8 +26,7 @@ import java.util.List;
 
 public class UserService {
 
-  private final Datastore datastore;
-  private final KeyFactory keyFactory;
+  
   private final String kind;
 
   /**
@@ -37,7 +36,7 @@ public class UserService {
    * @param kind the kind for the Datastore entities in this demo
    */
   public UserService(Datastore datastore, String kind) {
-    this.datastore = datastore;
+   
     this.keyFactory = datastore.newKeyFactory().setKind(kind);
     this.kind = kind;
   }
